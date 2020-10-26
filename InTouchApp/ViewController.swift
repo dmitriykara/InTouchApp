@@ -24,17 +24,17 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     }
     
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
-            switch result {
-                case MessageComposeResult.sent:
-                    print("Result: Text Message Sent!")
-                case MessageComposeResult.cancelled:
-                    print("Result: Text Message Cancelled.")
-                case MessageComposeResult.failed:
-                    print("Result: Error, Unable to Send Text Message.")
-            }
+        switch result {
+        case MessageComposeResult.sent:
+            print("Result: Text Message Sent!")
+        case MessageComposeResult.cancelled:
+            print("Result: Text Message Cancelled.")
+        case MessageComposeResult.failed:
+            print("Result: Error, Unable to Send Text Message.")
+        }
         self.dismiss(animated:true, completion: nil)
     }
-
+    
     
     @IBAction func sendText(_ sender: AnyObject) {
         if MFMessageComposeViewController.canSendText() {
@@ -54,14 +54,14 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
     func mailComposeController(_ didFinishWithcontroller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         switch result {
-            case MFMailComposeResult.sent:
-                print("Result: Email Sent!")
-            case MFMailComposeResult.cancelled:
-                print("Result: Email Cancelled.")
-            case MFMailComposeResult.failed:
-                    print("Result: Error, Unable to Send Email.")
-            case MFMailComposeResult.saved:
-                print("Result: Mail Saved as Draft.")
+        case MFMailComposeResult.sent:
+            print("Result: Email Sent!")
+        case MFMailComposeResult.cancelled:
+            print("Result: Email Cancelled.")
+        case MFMailComposeResult.failed:
+            print("Result: Error, Unable to Send Email.")
+        case MFMailComposeResult.saved:
+            print("Result: Mail Saved as Draft.")
         }
         self.dismiss(animated: true, completion: nil)
     }
