@@ -1,24 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="InTouchApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ways to get in touch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAB-3I-urC">
+                                <rect key="frame" x="41" y="125" width="332" height="41"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAW-in-7Ue">
+                                <rect key="frame" x="118" y="204" width="178" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="pnv-dG-snS"/>
+                                </constraints>
+                                <state key="normal" title="Email"/>
+                                <connections>
+                                    <action selector="sendEmail:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KtR-z9-LDY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5JX-J9-9i5">
+                                <rect key="frame" x="118" y="265" width="178" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="eWQ-xG-dlw"/>
+                                </constraints>
+                                <state key="normal" title="Text Message"/>
+                                <connections>
+                                    <action selector="sendText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f2o-Ys-3pe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4I-Ed-lnX">
+                                <rect key="frame" x="118" y="333" width="178" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="bn9-S5-7Ra"/>
+                                </constraints>
+                                <state key="normal" title="Website"/>
+                                <connections>
+                                    <action selector="openWebsite:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZPA-Q7-zmg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5JX-J9-9i5" firstAttribute="leading" secondItem="e4I-Ed-lnX" secondAttribute="leading" id="0Jn-bm-kSs"/>
+                            <constraint firstItem="xAW-in-7Ue" firstAttribute="top" secondItem="BAB-3I-urC" secondAttribute="bottom" constant="38" id="Cze-Vm-gxa"/>
+                            <constraint firstItem="BAB-3I-urC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="41" id="FaQ-a8-SSi"/>
+                            <constraint firstItem="BAB-3I-urC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G6R-gW-90L"/>
+                            <constraint firstItem="xAW-in-7Ue" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="118" id="Sbb-bE-d7O"/>
+                            <constraint firstItem="BAB-3I-urC" firstAttribute="centerX" secondItem="xAW-in-7Ue" secondAttribute="centerX" id="TuO-40-Auy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="e4I-Ed-lnX" secondAttribute="bottom" constant="499" id="Zb2-qH-bkV"/>
+                            <constraint firstItem="5JX-J9-9i5" firstAttribute="top" secondItem="xAW-in-7Ue" secondAttribute="bottom" constant="31" id="aSC-q7-Kcf"/>
+                            <constraint firstItem="5JX-J9-9i5" firstAttribute="trailing" secondItem="e4I-Ed-lnX" secondAttribute="trailing" id="ffw-Oc-1bc"/>
+                            <constraint firstItem="e4I-Ed-lnX" firstAttribute="top" secondItem="5JX-J9-9i5" secondAttribute="bottom" constant="38" id="iR2-9C-qrr"/>
+                            <constraint firstItem="BAB-3I-urC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="81" id="j2c-Pm-VoO"/>
+                            <constraint firstItem="xAW-in-7Ue" firstAttribute="leading" secondItem="5JX-J9-9i5" secondAttribute="leading" id="j71-mL-klD"/>
+                            <constraint firstItem="xAW-in-7Ue" firstAttribute="trailing" secondItem="5JX-J9-9i5" secondAttribute="trailing" id="mrh-Sb-6zd"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="88.392857142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
